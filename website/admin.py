@@ -1,9 +1,8 @@
-# -*- coding: utf-8 -*-
-
 from django.contrib import admin
-from website.models import List,Item
+from website.models import Navigation
 
 # Register your models here.
+class NavigationAdmin(admin.ModelAdmin):
+	list_display = ( 'title', 'parent_navigation',)
 
-admin.site.register(List)
-admin.site.register(Item)
+admin.site.register(Navigation, NavigationAdmin)

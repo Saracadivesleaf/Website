@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block title%}{{ article.title }}{% endblock %}
+
+{% block content %}
+<div class="container">
+	<div class="article_box">
+		<span class="super">{{ article.title }}</span>
+		<div class="article_content">
+			{{ article.content | safe }}
+		</div>
+	</div>
+<div>
+
+<!-- 留言板部分 
+<div class="container">
+	<div class="reply_box">
+		<div>
+			{% if note_list %}
+			{% for each_note in note_list %}
+			<div class="note">
+				<table width="100%" border="0" cellspacing="0" cellpadding="0">
+					<tr>
+						<td width="10px"></td>
+						<td>
+							<strong><span class="small">{{ each_note.from_user }}</span></strong>
+							<span class="small">{{ each_note.post_time | date:'r' }}</span>
+							<div class="bh3"></div>
+							<div class="note_cell">{{ each_note.content | safe }}</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+			{% endfor %}
+			{% endif %}
+		</div>
+		<div>
+			<form method="POST">
+				<div class="add_note">
+					<table width="100%" cellspacing="0" cellpadding="0">
+						<tr>
+							<td width="10px"></td>
+							<td>
+								<span class="large">User&nbsp;Name:</span>
+								<input type="text" name="from_user"/>
+								<span class="large">（必填）</span>
+							</td>
+						</tr>
+						<tr>
+							<td width="10px"></td>
+							<td>
+								<div class="bh5"></div>
+								<textarea id="comment_add" name="content"></textarea>
+								<div class="bh5"></div>
+								<button type="submit">Paste&nbsp;it!</button>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+-->
+{% endblock %}

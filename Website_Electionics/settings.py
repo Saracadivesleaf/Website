@@ -38,6 +38,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'website',
+    'category',
+    'article',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -81,8 +83,18 @@ USE_L10N = True
 
 USE_TZ = True
 
+SITE_ID = 1
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
+
+TEMPLATE_DIRS = (
+    os.path.join(BASE_DIR, 'templates').replace('\\', '/'),
+    )
+
+STATICFILES_DIRS = (
+          os.path.join(BASE_DIR, 'static').replace('\\', '/'),
+    )
